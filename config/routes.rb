@@ -11,8 +11,8 @@ Warmup::Application.routes.draw do
   
   root to: 'pages#client'
 
-  match '/client.js', to: 'pages#client.js'
-  match '/client.css', to: 'pages#client.css'
+  match '/client.js', to: 'pages#client.js.erb'
+  match '/client.css', to: 'pages#client.css.erb'
 
   match '/users/login', to: 'users#login'
   match '/users/add', to: 'users#add'
