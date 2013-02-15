@@ -9,7 +9,7 @@ Warmup::Application.routes.draw do
 
   get "pages/client"
   
-  root to: 'pages#client'
+  root to: 'pages#client.html.erb'
 
   match '/client.js', to: 'pages#client.js.erb'
   match '/client.css', to: 'pages#client.css.erb'
