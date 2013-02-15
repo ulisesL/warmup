@@ -1,4 +1,26 @@
 Warmup::Application.routes.draw do
+  get "testapi/ResetFixture"
+
+  get "testapi/UnitTests"
+
+  get "users/login"
+
+  get "users/add"
+
+  get "pages/client"
+  
+  root to: 'pages#client'
+
+  match '/client.js', to: 'pages#client.js'
+  match '/client.css', to: 'pages#client.css'
+
+  match '/users/login', to: 'users#login'
+  match '/users/add', to: 'users#add'
+
+  match '/TESTAPI/resetFixture', to: 'testapi#ResetFixture'
+  match '/TESTAPI/unitTests', to: 'testapi#UnitTests'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
