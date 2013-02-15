@@ -14,11 +14,11 @@ Warmup::Application.routes.draw do
   match '/client.js', to: 'pages#client.js.erb'
   match '/client.css', to: 'pages#client.css.erb'
 
-  match '/users/login', to: 'users#login'
-  match '/users/add', to: 'users#add'
 
-  match '/TESTAPI/resetFixture', to: 'testapi#ResetFixture'
-  match '/TESTAPI/unitTests', to: 'testapi#UnitTests'
+  match '/users/add', to: 'users#add', :via => :post, :defaults => { :format => "json" }
+  match '/users/login', to: 'users#login', :via => :post, :defaults => { :format => "json" }
+  match '/TESTAPI/resetFixture', to: 'testapi#ResetFixture', :via => :post, :defaults => { format: "json" }
+  match '/TESTAPI/unitTests', to: 'testapi#UnitTests', :via => :post, :defaults => { :format => "json" }
 
 
   # The priority is based upon order of creation:

@@ -4,7 +4,15 @@ describe User do
 
   before do
     @user = User.new(username: "Example", password: "user123")
+    @usertwo = User.new(username: "Example1", password: "user123")
   end
+
+  subject { @usertwo }
+
+  it { should respond_to(:username) }
+  it { should respond_to(:password) }
+
+  it { should be_valid }
 
   subject { @user }
 
@@ -23,7 +31,7 @@ describe User do
     it { should_not be_valid }
   end
 
-  describe "when username is already taken" do
+  describe "username uniqueness" do
     before do
       user_with_same_username = @user.dup
       user_with_same_username.username = @user.username.upcase
@@ -38,7 +46,7 @@ describe User do
     it { should_not be_valid }
   end
 
-  describe "when email is not present" do
+  describe "when password is not present" do
     before { @user.password = " " }
     it { should_not be_valid }
   end
@@ -48,7 +56,7 @@ describe User do
     it { should_not be_valid }
   end
 
-  describe "when username is too long" do
+  describe "when password is too long" do
     before { @user.password = "a" * 129 }
     it { should_not be_valid }
   end

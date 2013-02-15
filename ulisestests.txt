@@ -1,7 +1,7 @@
-.........
+............
 
-Finished in 0.10434 seconds
-9 examples, 0 failures
+Finished in 0.08045 seconds
+12 examples, 0 failures
 
-Randomized with seed 46689
+Randomized with seed 56676
 

@@ -6,7 +6,7 @@ class TestapiController < ApplicationController
   	
   	User.delete_all
   	respond_to do |format| 
-  			format.json {render json: {errCode: nil}} 
+  			format.json {render json: {errCode: 1}} 
   	end
 
   end
