@@ -1,8 +1,7 @@
 Warmup::Application.routes.draw do
+  
   get "testapi/ResetFixture"
-
   get "testapi/UnitTests"
-
   get "users/login"
 
   get "users/add"
@@ -20,6 +19,7 @@ Warmup::Application.routes.draw do
   match '/TESTAPI/resetFixture', to: 'testapi#ResetFixture', :via => :post, :defaults => { format: "json" }
   match '/TESTAPI/unitTests', to: 'testapi#UnitTests', :via => :post, :defaults => { :format => "json" }
 
+  match '/signup', to: 'pages#client'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
